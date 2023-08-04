@@ -1,6 +1,8 @@
 # GPT-Powered Youtube Question Answerer
 Provide a Youtube link, ask questions, and get answers. Simple as that.
 
+Uses LangChain, OpenAI LLM
+
 ## Usage
 
 1. Ensure you have Python installed
@@ -12,13 +14,17 @@ Provide a Youtube link, ask questions, and get answers. Simple as that.
 3. Install the required dependencies. In terminal: navigate to the project directory and run the following command:
 `pip install -r requirements.txt` (pip3 if you are using python3)
 
-4. Transcribe the Youtube video and load into the vector store with the following command (choose whatever name you like for the vector store): `python3 script.py <Youtube link> <Name of vector store>`
+4. In the root directory of your project, create a `.env` file and add the following line to it, replacing `YOUR_OPENAI_API_KEY` with your actual API key:
+
+`OPENAI_API_KEY=YOUR_OPENAI_API_KEY`
+
+5. Transcribe the Youtube video and load into the vector store with the following command (choose whatever name you like for the vector store): `python3 script.py <Youtube link> <Name of vector store>`
 
 Example: `python3 script.py https://www.youtube.com/watch?v=kVeOpcw4GWY create_react_app`
 
 This may take a few minutes.
 
-5. Ask questions about the video: `python3 answer_question.py <Name of vector store> <Question text>`
+6. Ask questions about the video: `python3 answer_question.py <Name of vector store> <Question text>`
 
 Example: `python3 answer_question.py create_react_app "What version of node do I need?"`
 
