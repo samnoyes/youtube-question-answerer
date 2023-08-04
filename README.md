@@ -1,7 +1,7 @@
 # GPT-Powered Youtube Question Answerer
 Provide a Youtube link, ask questions, and get answers. Simple as that.
 
-Uses LangChain, OpenAI LLM
+Uses LangChain, OpenAI for the LLM, and Chroma for the vector database.
 
 ## Usage
 
