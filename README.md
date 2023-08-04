@@ -1,7 +1,7 @@
 # GPT-Powered Youtube Question Answerer
 Provide a Youtube link, ask questions, and get answers. Simple as that.
 
-Uses LangChain, OpenAI for the LLM, and Chroma for the vector database.
+Uses LangChain, GPT 3.5 for the LLM, and Chroma for the vector database.
 
 ## Usage
 
@@ -29,3 +29,7 @@ This may take a few minutes.
 Example: `python3 answer_question.py create_react_app "What version of node do I need?"`
 
 Result, as stated in the video: `You need a modern version of Node installed on your computer, ideally version 5.2 or above.`
+
+## Limitations
+
+We split the transcription into 1000-token chunks and only refer to the 4 most relevant chunks (k=4 is baked into Langchain's vector DB QA retrieval), so if the question is too broad it may struggle to answer because it won't be able to see all of the available information. Try to rephrase the question to be more specific if you run into this issue.
