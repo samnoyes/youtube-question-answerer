@@ -24,7 +24,6 @@ vectordb = Chroma(
     embedding_function=embedding
 )
 question = sys.argv[2]
-# docs_ss = vectordb.similarity_search(question,k=3)
 
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
